@@ -1,3 +1,16 @@
-defaults:
-	g++ -O2 -Wall src/hq9+.cxx -o bin/hq9+
-	./bin/hq9+
+CC = g++
+CFLAGS = -Wall -O2
+LDFLAGS =
+
+SRC = src/hq9+.cxx
+TARGET = bin/hq9+
+
+run:
+	./$(TARGET)
+
+build:
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
+
+.PHONY: clean
+clean:
+	rm -f $(TARGET)

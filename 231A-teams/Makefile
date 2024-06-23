@@ -1,3 +1,16 @@
-defaults:
-	g++ -O2 -Wall src/teams.cxx -o bin/teams
-	./bin/teams
+CC = g++
+CFLAGS = -Wall -O2
+LDFLAGS =
+
+SRC = src/teams.cxx
+TARGET = bin/teams
+
+run:
+	./$(TARGET)
+
+build:
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
+
+.PHONY: clean
+clean:
+	rm -f $(TARGET)
